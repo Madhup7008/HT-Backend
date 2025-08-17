@@ -3,6 +3,10 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 
+app.get("/", (req, res) => {
+  res.send("✅ Backend is running on Render!");
+});
+
 const app = express();
 app.use(bodyParser.json());
 app.use(cors());
