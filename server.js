@@ -3,10 +3,6 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 
-app.get("/", (req, res) => {
-  res.send("✅ Backend is running on Render!");
-});
-
 const app = express();
 app.use(bodyParser.json());
 app.use(cors());
@@ -192,3 +188,7 @@ app.get('/api/students_with_fees', async (req, res) => {
 });
 
 app.listen(5050, () => console.log('Server running at http://localhost:5050'));
+
+app.get("/", (req, res) => {
+  res.send("✅ Backend is running on Render!");
+});
