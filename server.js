@@ -2,6 +2,14 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+import cors from "cors";
+
+app.use(cors({
+  origin: ["ht-frontend-flame.vercel.app"], // replace with your actual frontend domain
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  credentials: true
+}));
+
 
 const app = express();
 app.use(bodyParser.json());
