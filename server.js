@@ -47,7 +47,7 @@ app.delete('/api/students/:id', async (req, res) => {
 });
 
 // Register student
-app.post('/register', async (req, res) => {
+app.post('/api/register', async (req, res) => {
   const { name, phone, email } = req.body;
 
   if (!name || !phone || !email) {
