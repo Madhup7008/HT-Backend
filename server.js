@@ -3,6 +3,13 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 
+app.use(cors({
+  origin: ['http://localhost:5050', 'https://ht-frontend-ajiskl4oa-madhups-projects.vercel.app'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true
+}));
+
+
 const app = express();
 app.use(bodyParser.json());
 app.use(cors());
