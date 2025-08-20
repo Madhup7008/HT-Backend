@@ -3,13 +3,6 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 
-app.use(cors({
-  origin: ['http://localhost:5050', 'https://ht-frontend-ajiskl4oa-madhups-projects.vercel.app'],
-  methods: ['GET', 'POST', 'PUT', 'DELETE'],
-  credentials: true
-}));
-
-
 const app = express();
 app.use(bodyParser.json());
 app.use(cors());
@@ -54,7 +47,7 @@ app.delete('/api/students/:id', async (req, res) => {
 });
 
 // Register student
-app.post('/api/register', async (req, res) => {
+app.post('/register', async (req, res) => {
   const { name, phone, email } = req.body;
 
   if (!name || !phone || !email) {
@@ -195,7 +188,3 @@ app.get('/api/students_with_fees', async (req, res) => {
 });
 
 app.listen(5050, () => console.log('Server running at http://localhost:5050'));
-
-app.get("/", (req, res) => {
-  res.send("✅ Backend is running on Render!");
-});
